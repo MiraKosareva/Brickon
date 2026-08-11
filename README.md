@@ -2,6 +2,92 @@
 
 Интернет-магазин на Laravel с полным функционалом: каталог, корзина, избранное, админ-панель, имитация оплаты.
 
+## Демонстрация работы
+
+### Главная страница
+
+<div align="center">
+  <img src="images/main-page.png" width="700" alt="Главная страница">
+  <p><em>Главная страница с категориями и поиском</em></p>
+</div>
+
+<br>
+
+### Каталог товаров
+
+<div align="center">
+  <img src="images/catalog.png" width="700" alt="Каталог LEGO">
+  <p><em>Каталог с фильтрацией по категориям, цене и сортировкой</em></p>
+</div>
+
+<br>
+
+### Поиск и карточка товара
+
+<div align="center">
+  <img src="images/search.gif" width="700" alt="Поиск товара">
+  <p><em>Поиск по названию и открытие карточки товара</em></p>
+</div>
+
+<br>
+
+### Регистрация и авторизация
+
+<div align="center">
+  <img src="images/login.png" width="700" alt="Авторизация">
+  <p><em>Вход в личный кабинет</em></p>
+</div>
+
+<br>
+
+### Избранное
+
+<div align="center">
+  <img src="images/favorites.png" width="700" alt="Избранное">
+  <p><em>Список избранных товаров</em></p>
+</div>
+
+<br>
+
+### Корзина
+
+<div align="center">
+  <img src="images/cart.png" width="700" alt="Корзина">
+  <p><em>Корзина с возможностью изменения количества и удаления товаров</em></p>
+</div>
+
+<br>
+
+### Оформление заказа и оплата
+
+<div align="center">
+  <img src="images/pay.gif" width="700" alt="Оформление заказа">
+  <p><em>Оформление заказа с выбором способа оплаты (имитация)</em></p>
+</div>
+
+<br>
+
+### Админ-панель
+
+<div align="center">
+  <img src="images/admin-products.png" width="700" alt="Админ-панель товары">
+  <p><em>Управление товарами в админ-панели</em></p>
+</div>
+
+<br>
+
+<div align="center">
+  <img src="images/admin-categories.png" width="700" alt="Админ-панель категории">
+  <p><em>Управление категориями товаров</em></p>
+</div>
+
+<br>
+
+<div align="center">
+  <img src="images/admin-orders.gif" width="700" alt="Админ-панель заказы">
+  <p><em>Управление заказами и изменение статусов</em></p>
+</div>
+
 ## Технологии
 
 - **Backend**: Laravel 13.2.0, PHP 8.3.30
