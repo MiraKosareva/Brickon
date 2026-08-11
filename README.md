@@ -84,7 +84,7 @@
 <br>
 
 <div align="center">
-  <img src="images/admin-orders.gif" width="700" alt="Админ-панель заказы">
+  <img src="images/status_order.gif" width="700" alt="Админ-панель заказы">
   <p><em>Управление заказами и изменение статусов</em></p>
 </div>
 
