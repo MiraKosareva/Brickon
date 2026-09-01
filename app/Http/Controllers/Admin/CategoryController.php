@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Http\Requests\Admin\CategoryStoreRequest;
+use App\Http\Requests\Admin\CategoryUpdateRequest;
 
 class CategoryController extends Controller
 {
@@ -19,17 +21,19 @@ class CategoryController extends Controller
         return view('admin.categories.create');
     }
 
-    public function store(Request $request)
+    public function store(CategoryStoreRequest $request)
     {
-        $request->validate([
-            'name' => 'required|max:255',
-            'slug' => 'required|unique:categories',
-            'description' => 'nullable',
-        ]);
+        $data = $request->validated();
+        
+        if ($request->hasFile('image')) {
+            $data['image'] = $request->file('image')->store('categories', 'public');
+        }
 
-        Category::create($request->all());
+        Category::create($data);
 
-        return redirect()->route('admin.categories.index')->with('success', 'Категория добавлена');
+        return redirect()
+        ->route('admin.categories.index')
+        ->with('success', 'Категория добавлена');
     }
 
     public function edit(Category $category)
@@ -37,17 +41,22 @@ class CategoryController extends Controller
         return view('admin.categories.edit', compact('category'));
     }
 
-    public function update(Request $request, Category $category)
+    public function update(CategoryUpdateRequest $request, Category $category)
     {
-        $request->validate([
-            'name' => 'required|max:255',
-            'slug' => 'required|unique:categories,slug,' . $category->id,
-            'description' => 'nullable',
-        ]);
+        $data = $request->validated();
+        
+        if ($request->hasFile('image')) {
+            if ($category->image) {
+                \Storage::disk('public')->delete($category->image);
+            }
+            $data['image'] = $request->file('image')->store('categories', 'public');
+        }
 
-        $category->update($request->all());
+        $category->update($data);
 
-        return redirect()->route('admin.categories.index')->with('success', 'Категория обновлена');
+        return redirect()
+        ->route('admin.categories.index')
+        ->with('success', 'Категория обновлена');
     }
 
     public function destroy(Category $category)

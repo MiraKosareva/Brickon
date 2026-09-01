@@ -33,7 +33,7 @@
                 <td class="px-6 py-4">{{ number_format($product->price) }} ₽</td>
                 <td class="px-6 py-4">{{ $product->stock }}</td>
                 <td class="px-6 py-4">
-                    <a href="{{ route('admin.products.edit', $product) }}" class="text-blue-500 hover:underline mr-3">✏️</a>
+                    <a href="{{ route('admin.products.edit', $product->id) }}" class="text-blue-500 hover:underline mr-3">✏️</a>
                     <form action="{{ route('admin.products.destroy', $product) }}" method="POST" class="inline-block" onsubmit="return confirm('Удалить?')">
                         @csrf
                         @method('DELETE')

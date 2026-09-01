@@ -21,6 +21,10 @@
             <label class="block font-medium mb-1">Описание</label>
             <textarea name="description" rows="3" class="w-full border rounded-lg px-3 py-2"></textarea>
         </div>
+        <div class="mb-4">
+            <label class="block font-medium mb-1">Фото категории</label>
+            <input type="file" name="image" accept="image/*" class="w-full border rounded-lg px-3 py-2">
+        </div>
         <button type="submit" class="bg-brickon-red text-white px-6 py-2 rounded-lg">Сохранить</button>
     </form>
 </div>

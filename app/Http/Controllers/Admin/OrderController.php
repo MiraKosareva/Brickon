@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Order;
 use Illuminate\Http\Request;
+use App\Http\Requests\Admin\OrderStatusRequest;
 
 class OrderController extends Controller
 {
@@ -14,12 +15,8 @@ class OrderController extends Controller
         return view('admin.orders.index', compact('orders'));
     }
 
-    public function updateStatus(Request $request, Order $order)
+    public function updateStatus(OrderStatusRequest $request, Order $order)
     {
-        $request->validate([
-            'status' => 'required|in:pending,processing,completed,cancelled'
-        ]);
-        
         $order->update(['status' => $request->status]);
         
         if ($request->status === 'cancelled') {
